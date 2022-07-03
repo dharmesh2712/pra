@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="responsive.css">
+    <title>Document</title>
+    <style>
+         :root{
+               --col :rgb(165, 165, 165);
+         }
+        
+        body{
+             display: flex;
+             height: 100vh;
+             align-items: center;
+             justify-content: center;
+        }
+           .container{
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 70vh;
+                width: 18vw;
+                border-radius: 50px;
+                box-shadow: 0px 0px 13px var(--col);
+           }
+         a{
+             text-decoration: none;  
+            color: black;
+         }           
+         h1 ,h2{
+          border-radius: 50px;
+          padding: 5px 15px;
+          box-shadow: 3px 3px 3px var(--col);
+         }
+         select{ 
+               width: 150px;
+               padding: 5px 16px;
+               border: none;       
+               border-radius: 50px ;
+               box-shadow: 3px 3px 3px var(--col);
+               font-size: 1rem;
+               font-weight: 600;
+               color: rgb(63, 62, 62);
+         }         
+          option{
+               border: 1px solid black;
+         }
+         button{
+               
+               margin: 30px 0px;
+               padding: 5px 0px;
+               width: 150px;
+               border: 0px;
+               background-color: white;
+               box-shadow: 3px 3px 3px var(--col);
+               border-radius: 50px;  
+               font-size: 1rem;
+               font-weight: 600;
+               color: rgb(63, 62, 62); 
+         }  
+         button:hover{
+               background-color: rgb(236, 236, 236);
+         }
+         @media only screen and (max-width:415px){
+          .container{
+          width: 250vw;
+          height: 100vh;
+         }
+         h1,h2{
+               width: 50vw;
+               
+         }
+       }
+
+    </style>
+</head>
+<body>
+    
+       <div class="container">
+           <h1>TV Remote </h1>
+           <h2>Select Remote</h2>
+           <select name="select remote" id="fram" onchange="select(this)">
+             <option value="none">None</option>
+             <option value="mitv">Mi-TV</option>
+             <option value="Samsung">Samsung</option>
+             <option value="Sony">Sony-Bravia</option>
+             <option value="Phillips">Phillips</option>
+           </select> 
+           <Button class="addremote" > <a href="addremote.html" >Add Remote</a> </Button>
+       </div>
+
+        <script>
+
+                   
+                   
+                   function select(tvname){
+                     
+                     if(tvname.value == "mitv"){
+                          var mi = document.querySelectorAll("option")[1].innerHTML;
+                          sessionStorage.setItem("tvname1",mi);
+                              
+                    }
+                     else if(tvname.value == "Samsung"){
+                          var sam =  document.querySelectorAll("option")[2].innerHTML;
+                          sessionStorage.setItem("tvname1",sam);
+                           
+                     }
+                     else if(tvname.value == "Sony"){
+                          var sony = document.querySelectorAll("option")[3].innerHTML;
+                          sessionStorage.setItem("tvname1",sony);
+                           
+                     }
+                     else if(tvname.value == "Phillips"){
+                          var phil = document.querySelectorAll("option")[4].innerHTML;
+                          sessionStorage.setItem("tvname1",phil);
+                     }
+                   
+                   }
+                       
+          </script>
+       
+        
+</body>
+</html>
